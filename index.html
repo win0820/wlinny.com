@@ -41,7 +41,7 @@
   </div>
   <script>
     const countdownElement = document.getElementById('countdown');
-    let seconds = 0;
+    let seconds = 7;
 
     function countdown() {
       seconds--;
@@ -54,6 +54,8 @@
     }
 
     const intervalId = setInterval(countdown, 1000);
+    clearInterval(intervalId);
+    window.location.href = "https://www.facebook.com/profile.php?id=61555313122160";
   </script>
 </body>
 </html>
