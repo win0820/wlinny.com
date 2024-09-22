@@ -1,2 +1,2 @@
-# wlinny.com
-wlinny首頁
+# wlinny
+wlinny.com
