@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "My Site",
-    "currentPage": "teacher.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -50,7 +50,7 @@
         "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 250,
+    "uniqCompNum": 252,
     "versionPublish": "5.9.18",
     "imageResize": true,
     "chatbutton": {},
@@ -833,66 +833,58 @@
         {
           "alias": false,
           "_styles": {
+            "display": "flex",
             "& when not (@fullScreen)": {
               "padding-top": "(@paddingTop * 1rem)",
               "padding-bottom": "(@paddingBottom * 1rem)"
             },
-            "& when (@bg-type = 'color')": {
+            "& when (@bg-type = \"color\")": {
               "background-color": "@bg-value"
             },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".mbr-fallback-image.disabled": {
-              "display": "none"
-            },
-            ".mbr-fallback-image": {
-              "display": "block",
-              "background-size": "cover",
-              "background-position": "center center",
-              "width": "100%",
-              "height": "100%",
-              "position": "absolute",
-              "top": "0",
-              "& when (@bg-type = 'video')": {
-                "background-image": "url(@fallBackImage)"
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
               }
             },
-            "@media (max-width: 991px)": {
-              ".image-wrapper": {
-                "margin-bottom": "1rem"
-              }
-            },
-            "& when (@reverseContent)": {
+            "@media (min-width: 768px)": {
+              "align-items": "~\"@{verticalAlign}\"",
               ".row": {
-                "flex-direction": "row-reverse"
+                "justify-content": "~\"@{horizontalAlign}\""
+              },
+              ".content-wrap": {
+                "padding": "1rem 3rem"
               }
             },
-            ".row": {
-              "align-items": "center"
-            },
-            ".image-wrapper": {
-              "@media (max-width: 991px)": {
-                "padding": "1rem"
+            "@media (max-width: 991px) and (min-width: 768px)": {
+              ".content-wrap": {
+                "min-width": "50%"
               }
             },
-            ".text-wrapper": {
-              "@media (min-width: 992px)": {
-                "padding": "0 2rem"
+            "@media (max-width: 767px)": {
+              "-webkit-align-items": "center",
+              "align-items": "~\"@{verticalAlign}\"",
+              ".mbr-row": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center"
+              },
+              ".content-wrap": {
+                "width": "100%"
               }
             },
-            ".mbr-section-title": {
-              "color": "#000000"
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
             },
             ".mbr-text, .mbr-section-btn": {
-              "color": "#232323"
+              "text-align": "center"
             }
           },
-          "_name": "header01",
+          "_name": "header17",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\t\t<input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"5\">\n\t\t<input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n\t\t<input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n\t\t</fieldset>\n\t\t<header condition=\"bg.type === 'video'\">Fallback Image</header>\n\t\t<input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"col-12 col-md-12 col-lg-{{imageWidth}} image-wrapper\">\n\t\t\t\t<img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/79-1-1696x1312.png\" alt=\"Mobirise Website Builder\">\n\t\t\t</div>\n\t\t\t<div class=\"col-12 col-lg col-md-12\">\n\t\t\t\t<div class=\"text-wrapper align-left\">\n\t\t\t\t\t<h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n\t\t\t\t\t\t<b>晶片教育第一品牌</b>\n\t\t\t\t\t</h1>\n\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>來自台灣團隊\n<br>國中生、高中生\n<br>探索晶片設計的教材</b></p>\n\t\t\t\t\t<div mbr-buttons mbr-theme-style=\"display-2\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://shopee.tw/Wlinny-%E6%99%B6%E7%89%87%E8%A8%AD%E8%A8%88-%E7%94%A8Arduino%E5%AD%B8FPGA-i.53465780.28170116207\" data-app-placeholder=\"Type Text\">馬上購買</a></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
-          "_cid": "uwxnYGzgbZ",
-          "_anchor": "header01-61",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header16\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"8\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/-1919x1079.jpg\" selected parallax>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\">\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>晶片教育第一品牌</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\"><br></h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>來自台灣團隊\n<br>國中生、高中生\n<br>探索晶片設計的教材</b></p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-1\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">馬上購買</a></div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "uzPLYNhQT9",
+          "_anchor": "header17-6y",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -1609,116 +1601,6 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"list07\" group=\"Features\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"checkbox\" name=\"reverseContent\" title=\"Reverse\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" name=\"showButton\" title=\"Buttons\">\n        <select title=\"Questions\" name=\"cardAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n        <header>Color</header>\n        <input type=\"color\" title=\"Item\" name=\"items\" value=\"#ffffff\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1152.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#a6a99c\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-lg-4\">\n                <div class=\"col-12 col-md-12\">\n                    <h5 class=\"mbr-section-title mbr-fonts-style mt-0 mb-4\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>相關問題</b><br><b>AI回答你</b></h5>\n                    <h6 class=\"mbr-section-subtitle mbr-fonts-style mt-0 mb-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .main-button\" mbr-theme-style=\"display-7\">對於【晶片設計】常見的問題GPT告訴你</h6>\n                    <div class=\"mbr-section-btn item-footer mt-3  main-button\" mbr-if=\"showButton\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n                        <a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Learn More</a>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-8\">\n                <div id=\"bootstrap-accordion\" class=\"panel-group accordionStyles accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                    <div class=\"card\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse1\" aria-expanded=\"false\" aria-controls=\"collapse1\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit, .mbr-iconfont\">\n                                    我已經會寫程式了，還要學晶片設計嗎?\n                                </h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse1\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"></p><p></p><p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;程式就像是控制大腦做\"工作流程\"，而晶片設計就像是在設計 '電腦的大腦'，讓它能聽懂你的程式，學會晶片設計，你就可以了解電腦裡面如何工作的，甚至有一天設計出自己的小機器人或智慧裝置！這樣你不僅能寫程式，還能設計整個系統，變得更全能！所以如果你對這些感興趣，試試看，說不定會發現新的樂趣呢！</p></p><p></p><p></p>\n                            </div>\n                        </div>\n\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 1\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse2\" aria-expanded=\"false\" aria-controls=\"collapse2\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit\">\n                                    晶片設計未來可以做甚麼工作?</h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse2\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"></p><p><p>\n                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;學會晶片設計未來可以做很多超酷的工作哦！比如說，你可以成為一個晶片工程師，負責設計手機、電腦裡面的晶片，這些都是每天大家都在用的東西，你也可以進入自駕車或機器人的領域，幫忙設計它們的'大腦'，讓它們可以自己運作，所以晶片設計的工作不僅有趣，還能讓你參與未來的高科技發展，感覺很厲害吧！</p></p><p></p><p></p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 2\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse3\" aria-expanded=\"false\" aria-controls=\"collapse3\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit\">對晶片設計有興趣，未來應該要讀什麼科系?\n                                </h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse3\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"></p><p></p><p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你對晶片設計有興趣，未來可以選一些相關的科系來學習哦！像是電子工程系、電機工程系、或是資訊工程系，這些科系都會教你怎麼設計和製作晶片，還會學到數位電路、邏輯設計和程式設計的知識，另外，半導體工程也是個熱門的選擇，特別是現在台灣的半導體產業非常發達，像聯發科這樣的公司就很需要晶片設計師，這些科系都會是很好的選擇！</p></p><p></p><p></p><p></p><p></p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 3\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse4\" aria-expanded=\"false\" aria-controls=\"collapse4\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit\">\n                                    晶片設計跟AI有關嗎?\n                                </h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse4\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"></p><p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;晶片設計跟AI其實非常有關係！AI需要超強的計算能力，而這些計算都是由晶片來完成的，比如我們常聽到的AI處理器，就是專門為了加速AI運算而設計的晶片，晶片設計師會設計出專門用來跑AI算法的晶片，讓機器學習更快、運算更有效率</p></p><p>&nbsp; &nbsp; &nbsp; &nbsp; 現在很多大公司，比如NVIDIA、Google和台積電，都在製作專門的AI晶片，這些晶片讓像是自駕車、智慧助理（像是Siri或Google Assistant）和語音識別這些技術能夠更快更準確地運作。所以如果你學會晶片設計，不僅可以參與到AI的發展，甚至可以設計出讓AI變得更強大的晶片！換句話說，晶片設計其實就是讓AI更聰明、更快的關鍵技術之一哦！</p><p></p><p></p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 4\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse5\" aria-expanded=\"false\" aria-controls=\"collapse5\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit\">\n                                    What areas do you deliver to?\n                                </h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse5\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum\n                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis\n                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus\n                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus\n                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 5\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse6\" aria-expanded=\"false\" aria-controls=\"collapse6\">\n                                <h6 class=\"panel-title-edit mbr-semibold mbr-fonts-style mb-0\" mbr-theme-style=\"display-5\" data-app-selector=\".panel-title-edit\">\n                                    Is there a minimum order requirement for delivery?\n                                </h6>\n                                <span class=\"sign mbr-iconfont mobi-mbri-arrow-down\"></span>\n                            </a>\n                        </div>\n                        <div id=\"collapse6\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum\n                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis\n                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus\n                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus\n                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "uowyv1vHrR",
           "_anchor": "list07-3h",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            "img, .item-img": {
-              "width": "100%",
-              "& when (@autoSize)": {
-                "height": "100%",
-                "object-fit": "cover",
-                "& when (@showCardTitle)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                },
-                "& when (@showText)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                },
-                "& when (@showButtons)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                }
-              }
-            },
-            ".item:focus, span:focus": {
-              "outline": "none"
-            },
-            ".item": {
-              "margin-bottom": "2rem"
-            },
-            "@media (max-width: 767px)": {
-              ".item": {
-                "margin-bottom": "1rem"
-              }
-            },
-            "& when not (@spacing)": {
-              ".row": {
-                "margin-left": "0",
-                "margin-right": "0"
-              },
-              ".item": {
-                "padding": "0",
-                "margin": "0"
-              }
-            },
-            ".item-content": {
-              "margin-top": "2rem",
-              "padding": "0 2.25rem 2.25rem",
-              "@media (min-width: 992px) and (max-width: 1200px)": {
-                "padding": "0 1.5rem 1.5rem",
-                "padding-top": "1rem",
-                "margin-top": "1rem"
-              },
-              "@media (max-width: 767px)": {
-                "padding": "2rem 1.5rem",
-                "padding-top": "1rem",
-                "margin-top": "1rem"
-              },
-              "display": "flex",
-              "flex-direction": "column",
-              "height": "100%"
-            },
-            ".item-wrapper": {
-              "position": "relative",
-              "background": "@cardsBg",
-              "height": "100%",
-              "display": "flex",
-              "flex-flow": "column nowrap",
-              ".item-footer": {
-                "margin-top": "auto"
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#000000"
-            },
-            ".item-title": {
-              "text-align": "left"
-            },
-            ".item-subtitle": {
-              "text-align": "left"
-            },
-            ".mbr-text, .item .mbr-section-btn": {
-              "text-align": "left"
-            },
-            ".content-head": {
-              "max-width": "800px"
-            }
-          },
-          "_name": "features04",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features4 start\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\">\n\t\t<input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n\t\t<select title=\"Columns\" name=\"cardsWidth\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected=\"\">3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n\t\t<input type=\"checkbox\" name=\"showmainButtons\" title=\"Buttons\">\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked=\"\">\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize &amp;&amp; !(showButtons==false &amp;&amp; showCardSubtitle==false &amp;&amp; showCardTitle==false &amp;&amp; showText==false)\">\n\t\t<input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Text\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked=\"\">\n\t\t<input type=\"color\" name=\"cardsBg\" title=\"BG\" value=\"#ffffff\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" parallax=\"\" name=\"bg\" required=\"\">\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected=\"\">\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n\t\t<input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t<div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle || showmainButton\">\n\t\t\t\t\t<h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n\t\t\t\t\t\t<b>近期活動</b></h4>\n\t\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .mbr-section-head .mbr-section-btn\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t</h5>\n\t\t\t\t\t<div class=\"mbr-section-btn align-center item-footer mb-0 mt-4\" mbr-if=\"showmainButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t<a href=\"\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Get Started</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/2025-2-768x768.png.webp\" alt=\"Mobirise Website Builder\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t<b>實體課程+學習歷程</b>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 10,600\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-7\"><a href=\"https://edc.com.tw/product/2025-01-23-%e5%9c%96%e5%bd%a2%e5%8c%96%e6%99%b6%e7%89%87%e8%a8%ad%e8%a8%88%e5%af%a6%e4%bd%9c%e7%87%9f-%e5%8f%b0%e5%8c%97%e5%a0%b4/\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">立即報名</a></div>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t\n\t\t</div>\n\t</div>\n</section>",
-          "_cid": "uwxrbQPM6Q",
-          "_anchor": "features04-66",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -3694,117 +3576,6 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"features4 start\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"8\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n\t\t<select title=\"Columns\" name=\"cardsWidth\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected>3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n\t\t<input type=\"checkbox\" name=\"showmainButtons\" title=\"Buttons\">\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize && !(showButtons==false && showCardSubtitle==false && showCardTitle==false && showText==false)\">\n\t\t<input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked>\n\t\t<input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Text\" checked>\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked>\n\t\t<input type=\"color\" name=\"cardsBg\" title=\"BG\" value=\"#ffffff\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" parallax name=\"bg\" required>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type == 'image'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t<div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle || showmainButton\">\n\t\t\t\t\t<h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n\t\t\t\t\t\t<b>晶片教育套件</b>\n\t\t\t\t\t</h4>\n\t\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .mbr-section-head .mbr-section-btn\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t</h5>\n\t\t\t\t\t<div class=\"mbr-section-btn align-center item-footer mb-0 mt-4\" mbr-if=\"showmainButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t<a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Get Started</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}} active\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/4-1236x1250.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t<b>【晶片設計】全套</b>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 3,000\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://shopee.tw/Wlinny-%E6%99%B6%E7%89%87%E8%A8%AD%E8%A8%88-%E7%94%A8Arduino%E5%AD%B8FPGA-i.53465780.28170116207\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">購買</a></div>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/6-600x607.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t<b>精美課堂課本</b>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 700\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href class=\"btn item-btn btn-secondary\" data-app-placeholder=\"Type Text\">尚未提供</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/5-600x605.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"2\" data-bs-slide-to=\"2\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>計算機拓展板</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 1,500<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href class=\"btn item-btn btn-secondary\" data-app-placeholder=\"Type Text\">尚未提供</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/7-1200x1191.jpeg\" alt=\"Mobirise Website Builder\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Arduino Mage</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 600<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href class=\"btn item-btn btn-secondary\" data-app-placeholder=\"Type Text\">尚未提供</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/1-366x370.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"4\" data-bs-slide-to=\"4\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t<b>線上課程(16堂)</b>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 1,500<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://forms.gle/iYnz91dJFF8JpZp89\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">購買</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/3-758x720.png\" alt=\"Mobirise Website Builder\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>搶答機電晶體板</b></h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 700<br>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://shopee.tw/product/53465780/28472986266/\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">購買</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
           "_cid": "uwyL9Vu1i1",
           "_anchor": "features04-67",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = \"color\")": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = \"image\")": {
-              "background-image": "url(@bg-value)",
-              "& when (@overlay)": {
-                ".mbr-overlay": {
-                  "background": "@overlayColor",
-                  "opacity": "@overlayOpacity"
-                }
-              }
-            },
-            "img, .item-img": {
-              "width": "100%",
-              "& when (@autoSize)": {
-                "height": "100%",
-                "object-fit": "cover",
-                "& when (@showCardTitle)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                },
-                "& when (@showText)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                },
-                "& when (@showButtons)": {
-                  "height": "(@imageHeight * 100px)",
-                  "object-fit": "cover"
-                }
-              }
-            },
-            ".item:focus, span:focus": {
-              "outline": "none"
-            },
-            ".item": {
-              "margin-bottom": "2rem"
-            },
-            "@media (max-width: 767px)": {
-              ".item": {
-                "margin-bottom": "1rem"
-              }
-            },
-            "& when not (@spacing)": {
-              ".row": {
-                "margin-left": "0",
-                "margin-right": "0"
-              },
-              ".item": {
-                "padding": "0",
-                "margin": "0"
-              }
-            },
-            ".item-content": {
-              "margin-top": "2rem",
-              "padding": "0 2.25rem 2.25rem",
-              "@media (min-width: 992px) and (max-width: 1200px)": {
-                "padding": "0 1.5rem 1.5rem",
-                "padding-top": "1rem",
-                "margin-top": "1rem"
-              },
-              "@media (max-width: 767px)": {
-                "padding": "2rem 1.5rem",
-                "padding-top": "1rem",
-                "margin-top": "1rem"
-              },
-              "display": "flex",
-              "flex-direction": "column",
-              "height": "100%"
-            },
-            ".item-wrapper": {
-              "position": "relative",
-              "background": "@cardsBg",
-              "height": "100%",
-              "display": "flex",
-              "flex-flow": "column nowrap",
-              ".item-footer": {
-                "margin-top": "auto"
-              }
-            },
-            ".mbr-section-title": {
-              "color": "#000000"
-            },
-            ".item-title": {
-              "text-align": "left"
-            },
-            ".item-subtitle": {
-              "text-align": "left"
-            },
-            ".mbr-text, .item .mbr-section-btn": {
-              "text-align": "left"
-            },
-            ".content-head": {
-              "max-width": "800px"
-            }
-          },
-          "_name": "features04",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features4 start\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<select title=\"Columns\" name=\"cardsWidth\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected=\"\">3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n\t\t<input type=\"checkbox\" name=\"showmainButtons\" title=\"Buttons\">\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked=\"\">\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize &amp;&amp; !(showButtons==false &amp;&amp; showCardSubtitle==false &amp;&amp; showCardTitle==false &amp;&amp; showText==false)\">\n\t\t<input type=\"checkbox\" title=\"Spacing\" name=\"spacing\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Text\" checked=\"\">\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked=\"\">\n\t\t<input type=\"color\" name=\"cardsBg\" title=\"BG\" value=\"#ffffff\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" parallax=\"\" name=\"bg\" required=\"\">\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected=\"\">\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n\t\t<input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\">\n\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t<div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle || showmainButton\">\n\t\t\t\t\t<h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n\t\t\t\t\t\t<b>近期活動</b></h4>\n\t\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .mbr-section-head .mbr-section-btn\">\n\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit.\n\t\t\t\t\t</h5>\n\t\t\t\t\t<div class=\"mbr-section-btn align-center item-footer mb-0 mt-4\" mbr-if=\"showmainButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t<a href=\"\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Get Started</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-image col-12 col-md-6 col-lg-{{cardsWidth}}\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/2025-2-768x768.png.webp\" alt=\"Mobirise Website Builder\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t<b>實體課程+學習歷程</b>\n\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .item .mbr-section-btn\">\n\t\t\t\t\t\t\tNT$ 10,600\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-7\"><a href=\"https://edc.com.tw/product/2025-01-23-%e5%9c%96%e5%bd%a2%e5%8c%96%e6%99%b6%e7%89%87%e8%a8%ad%e8%a8%88%e5%af%a6%e4%bd%9c%e7%87%9f-%e5%8f%b0%e5%8c%97%e5%a0%b4/\" class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">立即報名</a></div>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\n\t\t\t\n\t\t</div>\n\t</div>\n</section>",
-          "_anchor": "features04-68",
-          "_isUserblock": true,
-          "_cid": "uwyNk1PpSf",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -8063,11 +7834,11 @@
           "_sourceTheme": "startm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"menu menu1\" group=\"Menu\" plugins=\"DropDown, TouchSwipe\" always-top global once=\"menu\" not-draggable position-absolute>\n\t<mbr-parameters>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Logo\" name=\"showLogo\" checked>\n\t\t<input type=\"range\" title=\"Logo Size\" inline name=\"logoSize\" min=\"1\" max=\"5\" step=\"0.1\" value=\"3\" condition=\"showLogo\">\n\t\t<input type=\"checkbox\" title=\"Brand Name\" name=\"showBrand\">\n\t\t<input type=\"checkbox\" title=\"Menu Items\" name=\"showItems\" checked>\n\t\t<select title=\"Menu Items Align\" name=\"contentAlign\" condition=\"showItems\">\n\t\t\t<option value=\"1\" selected>Left</option>\n\t\t\t<option value=\"2\">Center</option>\n\t\t\t<option value=\"3\">Right</option>\n\t\t</select>\n\t\t<input type=\"checkbox\" title=\"Icons\" name=\"showIcons\">\n\t\t<select title=\"Amount\" name=\"iconsAmount\" condition=\"showIcons\">\n\t\t\t<option value=\"1\">1</option>\n\t\t\t<option value=\"2\">2</option>\n\t\t\t<option value=\"3\" selected>3</option>\n\t\t\t<option value=\"4\">4</option>\n\t\t</select>\n\t\t<input type=\"color\" title=\"Icons Color\" name=\"iconsColor\" value=\"#000000\" condition=\"showIcons\">\n\t\t<input type=\"checkbox\" title=\"Button\" name=\"showButtons\">\n\t\t<header>Styles</header>\n\t\t<input type=\"checkbox\" title=\"Collapsed\" name=\"collapsed\" condition=\"none\">\n\t\t<input type=\"checkbox\" title=\"Transparent\" name=\"transparent\" checked>\n\t\t<input type=\"checkbox\" title=\"Sticky\" name=\"sticky\" checked>\n\t\t<input type=\"range\" title=\"Opacity\" name=\"opacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" condition=\"transparent\">\n\t\t<input type=\"color\" title=\"Color\" name=\"menuBgColor\" value=\"#ffffff\">\n\t\t<input type=\"color\" title=\"Hamburger\" name=\"hamburgerColor\" value=\"#000000\">\n\t</mbr-parameters>\n\n\t<nav class=\"navbar navbar-dropdown\" mbr-class=\"{'navbar-fixed-top':sticky,\n                     'navbar-expand-lg':!collapsed,\n                     'collapsed':collapsed}\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"navbar-brand\">\n\t\t\t\t<span mbr-if=\"showLogo\" class=\"navbar-logo\">\n\t\t\t\t\t<a href=\"index.html\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/wlinny-logo.svg\" alt=\"Mobirise Website Builder\" mbr-style=\"{'height': logoSize + 'rem'}\">\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t\t<span mbr-if=\"showBrand\" mbr-buttons mbr-theme-style=\"display-4\" class=\"navbar-caption-wrap\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove,-iconFont\"><a class=\"navbar-caption text-black\" data-app-selector=\".navbar-caption\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Mobirise</a></span>\n\t\t\t</div>\n\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems || showIcons || showButtons\">\n\t\t\t\t<div class=\"hamburger\">\n\t\t\t\t\t<span></span>\n\t\t\t\t\t<span></span>\n\t\t\t\t\t<span></span>\n\t\t\t\t\t<span></span>\n\t\t\t\t</div>\n\t\t\t</button>\n\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\" mbr-if=\"showItems || showIcons || showButtons\">\n\t\t\t\t<ul mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-4\" mbr-if=\"showItems\" mbr-class=\"{'nav-right': !showButtons,'navbar-nav-top-padding': isPublish && !showBrand && !showLogo}\"><li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"nav-link link text-black text-primary\" href=\"about.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">關於我們</a>\n\t\t\t\t\t</li><li class=\"nav-item\"><a class=\"nav-link link text-black text-primary\" href=\"friend.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">合作夥伴</a></li>\n\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"nav-link link text-black text-primary\" href=\"buy.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" aria-expanded=\"false\">商場</a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"nav-item dropdown\">\n\t\t\t\t\t\t<a class=\"nav-link link text-black dropdown-toggle\" href=\"https://mobiri.se\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" data-toggle=\"dropdown-submenu\" data-bs-toggle=\"dropdown\" data-bs-auto-close=\"outside\" aria-expanded=\"false\">線上軟體</a><div class=\"dropdown-menu\" aria-labelledby=\"dropdown-316\"><a class=\"text-black dropdown-item text-primary\" href=\"https://simul.wlinny.com/#/\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">免費版</a><a class=\"text-black dropdown-item text-primary\" href=\"https://simul-pro-test.wlinny.com/#/\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">試用版</a><a class=\"text-black dropdown-item text-primary\" href=\"https://simul-pro.wlinny.com/#/\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">校園版</a></div>\n\t\t\t\t\t</li><li class=\"nav-item dropdown\"><a class=\"nav-link link text-black dropdown-toggle\" href=\"https://mobiri.se\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" data-toggle=\"dropdown-submenu\" data-bs-toggle=\"dropdown\" data-bs-auto-close=\"outside\" aria-expanded=\"false\">教學資料</a><div class=\"dropdown-menu\" aria-labelledby=\"dropdown-348\"><a class=\"text-black dropdown-item text-primary\" href=\"learning.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">教學影片</a><a class=\"text-black dropdown-item text-primary\" href=\"MicroClass.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">微課程</a><a class=\"text-black dropdown-item text-primary\" href=\"teacher.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">教師專區</a></div></li><li class=\"nav-item\"><a class=\"nav-link link text-black show text-primary\" href=\"https://forms.gle/GqarFstfJLATD36g7\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">教師研習申請</a></li></ul>\n\t\t\t\t<div class=\"icons-menu\" mbr-if=\"showIcons\">\n\t\t\t\t\t<a class=\"iconfont-wrapper\" href=\"https://mobiri.se\">\n\t\t\t\t\t\t<span mbr-icon class=\"p-2 mbr-iconfont mobi-mbri-phone mobi-mbri\"></span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<a class=\"iconfont-wrapper\" href=\"https://mobiri.se\" mbr-if=\"iconsAmount > 1\">\n\t\t\t\t\t\t<span mbr-icon class=\"p-2 mbr-iconfont mobi-mbri-letter mobi-mbri\"></span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<a class=\"iconfont-wrapper\" href=\"https://mobiri.se\" mbr-if=\"iconsAmount > 2\">\n\t\t\t\t\t\t<span mbr-icon class=\"p-2 mbr-iconfont mobi-mbri-map-pin mobi-mbri\"></span>\n\t\t\t\t\t</a>\n\t\t\t\t\t<a class=\"iconfont-wrapper\" href=\"https://mobiri.se\" mbr-if=\"iconsAmount > 3\">\n\t\t\t\t\t\t<span mbr-icon class=\"p-2 mbr-iconfont mobi-mbri-shopping-cart mobi-mbri\"></span>\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\" class=\"navbar-buttons mbr-section-btn\"><a class=\"btn btn-primary\" href=\"https://shopee.tw/Wlinny-%E6%99%B6%E7%89%87%E8%A8%AD%E8%A8%88-%E7%94%A8Arduino%E5%AD%B8FPGA-i.53465780.28170116207\" data-app-placeholder=\"Type Text\"> 馬上購買</a></div>\n\t\t\t</div>\n\t\t</div>\n\t</nav>\n</section>",
           "_cid": "uzJz8Uqp39",
+          "_anchor": "menu01-6r",
           "_protectedParams": [],
           "_global": true,
           "_once": "menu",
-          "_params": {},
-          "_anchor": "menu01-6r"
+          "_params": {}
         },
         {
           "alias": false,
@@ -8102,11 +7873,11 @@
           "_sourceTheme": "startm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"article11\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n       <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">        \n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\">\n    </div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mt-0 mb-0\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>教師專區</b></h3>\n                <h4 class=\"mbr-section-subtitle align-center mbr-fonts-style mt-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\"></h4>\n                <div class=\"mbr-section-btn align-center mt-4\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\">\n                    <a class=\"btn btn-secondary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                        Learn more\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "uzJz8UDmoF",
+          "_anchor": "article11-6s",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "article11-6s"
+          "_params": {}
         },
         {
           "alias": false,
@@ -8168,11 +7939,11 @@
           "_sourceTheme": "startm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"header7\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline name=\"videoWidth\" title=\"Video\" min=\"4\" max=\"12\" step=\"1\" value=\"8\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <header>Background</header>\n    <input type=\"checkbox\" title=\"Decoration\" name=\"doubleBg\" checked>\n    <input type=\"color\" title=\"Color\" name=\"topbg\" value=\"#edefeb\" selected>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div class=\"topbg\" mbr-if=\"doubleBg\"></div>\n  <div class=\"align-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 mb-5 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n          <b>教師說明會</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get Started</a>\n          <a class=\"btn btn-primary-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Read More</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row justify-content-center\">\n      <div mbr-video class=\"mbr-figure col-12 col-md-{{videoWidth}}\">\n        <iframe src=\"https://youtu.be/hiI0fqD7BZg?si=WeBckPpsJMzeeD84\"></iframe>\n      </div>\n    </div>\n  </div>\n</section>",
           "_cid": "uzJzkVZ3YU",
+          "_anchor": "header07-6w",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "header07-6w"
+          "_params": {}
         },
         {
           "alias": false,
@@ -8210,11 +7981,11 @@
           "_sourceTheme": "startm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"image3\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"9\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\">\n          <b>課程方案</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-4 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n        <div class=\"image-wrapper\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/34-2643x1487.jpg\" alt=\"Mobirise Website Builder\">\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
           "_cid": "uzJzOIaCU8",
+          "_anchor": "image03-6x",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "image03-6x"
+          "_params": {}
         },
         {
           "alias": false,
@@ -8250,11 +8021,11 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"article11\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n       <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">        \n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\">\n    </div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"title col-md-12 col-lg-{{textWidth}}\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mt-0 mb-0\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\"><b>聯絡我們</b></h3>\n                <h4 class=\"mbr-section-subtitle align-center mbr-fonts-style mt-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\">\n                The everlasting charm of photographs\n                </h4>\n                <div class=\"mbr-section-btn align-center mt-4\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\">\n                    <a class=\"btn btn-secondary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                        Learn more\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_isUserblock": true,
           "_cid": "uzJz8UYCpx",
+          "_anchor": "article11-6u",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "article11-6u"
+          "_params": {}
         },
         {
           "alias": false,
@@ -8337,11 +8108,11 @@
           "_PHPplaceholders": [],
           "_isUserblock": true,
           "_cid": "uzJz8V7tOp",
+          "_anchor": "footer03-6v",
           "_protectedParams": [],
           "_global": true,
           "_once": "footers",
-          "_params": {},
-          "_anchor": "footer03-6v"
+          "_params": {}
         }
       ]
     }
