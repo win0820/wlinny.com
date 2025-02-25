@@ -50,7 +50,7 @@
         "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 258,
+    "uniqCompNum": 262,
     "versionPublish": "5.9.18",
     "imageResize": true,
     "chatbutton": {},
@@ -74,7 +74,7 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "科技教育 | 晶片IC設計第一品牌 | 專長探索",
+        "title": "Wlinny：台灣晶片教育第一品牌 | 半導體電路設計課程",
         "meta_descr": "wlinny首頁\n晶片教育第一品牌\n來自台灣團隊\n國中生、高中生\n探索晶片設計的教材\nWlinny 開發出全方位的晶片設計學習平台，只需動動手指拖拉邏輯閘就能學習晶片設計。",
         "header_custom": "",
         "footer_custom": "",
@@ -1736,7 +1736,7 @@
     },
     "about.html": {
       "settings": {
-        "title": "Wlinny | 關於我們",
+        "title": "關於我們",
         "meta_descr": "wlinny關於我們\nWin / 創始人\n這個人人寫程式的時代，有些人學得好有些人學不好，不是孩子笨，只是孩子的思考邏輯跟”馮紐曼”不一樣。\n馮紐曼是電腦之父，他定義了現在的程式語言思維，我們不該要求所有人思考邏輯都相同，就像【猴子和魚比賽爬樹】的故事一樣，所以我希望能將晶片設計推廣至國中與高中，而開發了這套教材。",
         "header_custom": "",
         "footer_custom": "",
@@ -2714,12 +2714,12 @@
     },
     "buy.html": {
       "settings": {
-        "title": "Wlinny | 商場中心",
+        "title": "商場中心",
         "meta_descr": "wlinny商場中心\n提供查看價格與跳轉",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "order": "2"
+        "order": "3"
       },
       "components": [
         {
@@ -3712,12 +3712,12 @@
     },
     "learning.html": {
       "settings": {
-        "title": "Wlinny | 教學資料",
+        "title": "教學資料",
         "meta_descr": "wlinny教學資料\n讓老師可以參考影片了解如何使用wlinny晶片設計教材。",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "order": "3"
+        "order": "4"
       },
       "components": [
         {
@@ -4921,12 +4921,12 @@
     },
     "MicroClass.html": {
       "settings": {
-        "title": "Wlinny | 微課程分享",
+        "title": "微課程分享",
         "meta_descr": "wlinny微課程分享\n讓老師可以免費的使用wlinny的軟體與課程，到自己的課程中。",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "order": "4"
+        "order": "5"
       },
       "components": [
         {
@@ -6046,12 +6046,12 @@
     },
     "friend.html": {
       "settings": {
-        "title": "Wlinny | 合作夥伴",
+        "title": "合作夥伴",
         "meta_descr": "wlinny合作的廠商",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "order": "5"
+        "order": "6"
       },
       "components": [
         {
@@ -7083,12 +7083,12 @@
     },
     "teacher.html": {
       "settings": {
-        "title": "Wlinny | 教師專區",
+        "title": "教師專區",
         "meta_descr": "wlinny 教師專區 提供老師 課程介紹",
         "header_custom": "",
         "footer_custom": "",
         "html_before": "",
-        "order": "6"
+        "order": "7"
       },
       "components": [
         {
