@@ -1,6 +1,6 @@
 {
   "settings": {
-    "name": "My Site",
+    "name": "中文官網",
     "currentPage": "index.html",
     "theme": {
       "name": "startm5",
@@ -55,7 +55,7 @@
     "imageResize": true,
     "chatbutton": {},
     "favicon": false,
-    "mbrsiteDomain": "ktjot1jvkl",
+    "mbrsiteDomain": "aiv6b4jvfs",
     "usedWebp": false,
     "cssOptimize": false,
     "lazyLoad": false,
