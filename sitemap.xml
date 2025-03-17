@@ -1,77 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
     <url>
         <loc>https://wlinny.com/</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/" />
     </url>
+
     <url>
         <loc>https://wlinny.com/about.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/about.html" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/about.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/about.html" />
     </url>
+
     <url>
         <loc>https://wlinny.com/buy.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/buy.html" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/buy.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/buy.html" />
     </url>
+
     <url>
         <loc>https://wlinny.com/friend.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/friend.html" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/friend.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/friend.html" />
     </url>
+
     <url>
         <loc>https://wlinny.com/learning.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/learning.html" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/learning.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/learning.html" />
     </url>
+
     <url>
         <loc>https://wlinny.com/MicroClass.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wlinny.com/MicroClass.html" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://wlinny.com/MicroClass.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wlinny.com/en/MicroClass.html" />
     </url>
+
     <url>
         <loc>https://wlinny.com/teacher.html</loc>
         <lastmod>2025-02-23</lastmod>
         <priority>0.7</priority>
     </url>
-
-
-
-
-    <url>
-        <loc>https://wlinny.com/en/</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/about.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/buy.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/friend.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/learning.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/MicroClass.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://wlinny.com/en/teacher.html</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.7</priority>
-    </url>
-</urlset>
