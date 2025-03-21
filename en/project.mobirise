@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "英文官網",
-    "currentPage": "friend.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -50,7 +50,7 @@
         "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 264,
+    "uniqCompNum": 265,
     "versionPublish": "5.9.18",
     "imageResize": true,
     "chatbutton": {},
@@ -1033,6 +1033,224 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"start features20\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showMainTitle\">\n\t\t<input type=\"checkbox\" title=\"Subtitle\" name=\"showMainSubtitle\">\n\t\t<header>Card</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n\t\t<input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\t\t<input type=\"checkbox\" title=\"Center Image\" name=\"centerAlign\" condition=\"showImage\">\n\t\t<select title=\"Columns\" name=\"columns\">\n\t\t\t<option value=\"12\">1</option>\n\t\t\t<option value=\"6\">2</option>\n\t\t\t<option value=\"4\" selected>3</option>\n\t\t\t<option value=\"3\">4</option>\n\t\t</select>\n\t\t<input type=\"color\" title=\"Card BG\" name=\"cardbg\" value=\"#ffffff\" selected>\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n\t\t</fieldset>\n\t\t<header condition=\"bg.type === 'video'\">Fallback Image</header>\n\t\t<input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row mb-5 justify-content-center\" mbr-if=\"showMainTitle || showMainSubtitle\">\n\t\t\t<div class=\"col-12 mb-0 content-head\">\n\t\t\t\t<h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-title\">\n\t\t\t\t\t<b>Do more, get more</b>\n\t\t\t\t</h3>\n\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showMainSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n\t\t\t\t\tList main features of your project in this block\n\t\t\t\t</h5>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} item-mb\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<div class=\"img-wrapper mb-3\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/563331-160x239.jpg\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Jerry / teacher</b></h5>\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tThrough interactive learning and hands-on course design, combined with simulators and development boards, digital logic design becomes simple and can be burned into firmware. Students can also buy it home and play with it on their own.</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} item-mb\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<div class=\"img-wrapper mb-3\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/line-album-20200319-211127-50-160x107.jpeg\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Jenson /&nbsp;</b><b>teacher</b></h5>\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tExpertise exploration and diversified learning, explore different fields of knowledge early, cultivate diverse interests, and improve self-learning ability.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} item-mb\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<div class=\"img-wrapper mb-3\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/-160x162.png\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Janice / teacher</b></h5>\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tThe operation is simple and easy to get started. The whole course progress is well planned and rich in pictures and texts, which attracts students to actively learn.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} item-mb\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<div class=\"img-wrapper mb-3\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/s-15245322-160x213.jpeg\" data-slide-to=\"3\" data-bs-slide-to=\"4\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\">\n\t\t\t\t\t\t\t<b>Brian / IC Engineer</b></h5>\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tThe learning process of chip design is often accompanied by a high threshold, but this exclusive textbook not only simplifies the learning process, but also presents it in an easy-to-understand way, allowing novices to easily get started and gradually master the core concepts of IC design.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div><div class=\"item features-without-image col-12 col-md-6 col-lg-{{columns}} item-mb\">\n\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t<div class=\"card-box align-left\">\n\t\t\t\t\t\t<div class=\"img-wrapper mb-3\" mbr-if=\"showImage\">\n\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/ic-160x107.jpeg\" data-slide-to=\"4\" data-bs-slide-to=\"5\" alt>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<h5 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .img-wrapper\"><b>Woody&nbsp; / IC Engineer</b></h5>\n\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n\t\t\t\t\t\t\tIt is very friendly to chip design beginners and easy to use. The step-by-step teaching content is combined with interactive tools, so students can take real-time tests, quickly grasp basic concepts, and improve their circuit logic thinking ability. It is suitable for classroom and self-study.</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
           "_cid": "uq30l4s5Ci",
           "_anchor": "features020-4h",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            "img, .item-img": {
+              "width": "100%",
+              "& when (@autoSize)": {
+                "height": "100%",
+                "object-fit": "cover",
+                "& when (@showCardTitle)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showCardSubtitle)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showText)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "& when (@showButtons)": {
+                  "height": "(@imageHeight * 100px)",
+                  "object-fit": "cover"
+                },
+                "@media (max-width: 767px)": {
+                  "max-height": "300px"
+                }
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item-wrapper": {
+              "position": "relative"
+            },
+            ".slide-content": {
+              "position": "relative",
+              "border-radius": "4px",
+              "background": "@cardsBg",
+              "height": "100%",
+              "display": "flex",
+              "overflow": "hidden",
+              "flex-flow": "column nowrap",
+              "& when (@showButtons)": {
+                ".item-content": {
+                  "padding": "2.25rem 2.25rem 0"
+                },
+                ".item-footer": {
+                  "padding": "0 2.25rem 2.25rem"
+                }
+              },
+              "& when not (@showButtons)": {
+                ".item-content": {
+                  "padding": "2.25rem"
+                }
+              },
+              "@media (min-width: 992px) and (max-width: 1200px)": {
+                "& when (@showButtons)": {
+                  ".item-content": {
+                    "padding": "2rem 1.5rem 0"
+                  },
+                  ".item-footer": {
+                    "padding": "0 1.5rem 1.5rem"
+                  }
+                },
+                "& when not (@showButtons)": {
+                  ".item-content": {
+                    "padding": "1.5rem"
+                  }
+                }
+              },
+              "@media (max-width: 767px)": {
+                "& when (@showButtons)": {
+                  ".item-content": {
+                    "padding": "1.5rem 1.5rem 0"
+                  },
+                  ".item-footer": {
+                    "padding": "0 1.5rem 1.5rem"
+                  }
+                },
+                "& when not (@showButtons)": {
+                  ".item-content": {
+                    "padding": "1.5rem"
+                  }
+                }
+              }
+            },
+            ".mbr-section-btn": {
+              "margin-top": "auto !important"
+            },
+            ".mbr-section-title": {
+              "color": "#232323"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "left"
+            },
+            ".item-title": {
+              "text-align": "left"
+            },
+            ".item-subtitle": {
+              "text-align": "left",
+              "color": "#bbbbbb"
+            },
+            ".embla__slide": {
+              "display": "flex",
+              "justify-content": "center",
+              "position": "relative",
+              "min-width": "370px",
+              "max-width": "370px",
+              "@media (max-width: 768px)": {
+                "min-width": "85%",
+                "max-width": "initial"
+              }
+            },
+            ".embla__button--next, .embla__button--prev": {
+              "display": "flex"
+            },
+            ".embla__button": {
+              "top": "50%",
+              "width": "60px",
+              "height": "60px",
+              "margin-top": "-1.5rem",
+              "font-size": "22px",
+              "background-color": "rgba(0, 0, 0, 0.5)",
+              "color": "#fff",
+              "border": "2px solid #fff",
+              "border-radius": "50%",
+              "transition": "all 0.3s",
+              "position": "absolute",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "& when not (@arrows)": {
+                "display": "none"
+              },
+              "& when not (@arrowsMobile)": {
+                "@media (max-width: 768px)": {
+                  "display": "none"
+                }
+              },
+              "&:disabled": {
+                "cursor": "default",
+                "display": "none"
+              },
+              "&:hover": {
+                "background": "#000",
+                "color": "rgba(255, 255, 255, 0.5)"
+              },
+              "&.embla__button--prev": {
+                "left": "0",
+                "margin-left": "2.5rem"
+              },
+              "&.embla__button--next": {
+                "right": "0",
+                "margin-right": "2.5rem"
+              },
+              "@media (max-width: 767px)": {
+                "top": "auto"
+              }
+            },
+            ".embla": {
+              "position": "relative",
+              "width": "100%"
+            },
+            ".embla__viewport": {
+              "overflow": "hidden",
+              "width": "100%"
+            },
+            ".embla__viewport.is-draggable": {
+              "cursor": "grab"
+            },
+            ".embla__viewport.is-dragging": {
+              "cursor": "grabbing"
+            },
+            ".embla__container": {
+              "display": "flex",
+              "user-select": "none",
+              "-webkit-touch-callout": "none",
+              "-khtml-user-select": "none",
+              "-webkit-tap-highlight-color": "transparent",
+              "@media (max-width: 768px)": {
+                "& .embla__slide:first-child": {
+                  "margin-left": "2rem !important"
+                },
+                "& .embla__slide:last-child": {
+                  "margin-right": "2rem !important"
+                }
+              }
+            },
+            ".content-head": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "features017",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features017 mbr-embla\" group=\"Gallery & Slider\" plugins=\"embla\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\">\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" name=\"showTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showSubtitle\" title=\"Subtitle\">\n\t\t<header>Carousel</header>\n\t\t<input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\">\n\t\t<input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"5\" step=\"1\" condition=\"autoplay\">\n\t\t<input type=\"checkbox\" title=\"Loop\" name=\"loop\">\n\t\t<input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked>\n\t\t<input type=\"checkbox\" name=\"arrows\" title=\"Arrows\" checked>\n\t\t<input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\">\n\t\t<header>Cards</header>\n\t\t<input type=\"checkbox\" name=\"autoSize\" title=\"Auto Size\" checked>\n\t\t<input type=\"range\" name=\"imageHeight\" title=\"Height\" min=\"1\" max=\"5\" step=\"1\" value=\"4\" condition=\"autoSize && !(showButtons==false && showCardSubtitle==false && showCardTitle==false && showText==false)\">\n\t\t<input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n\t\t<input type=\"checkbox\" name=\"showCardTitle\" title=\"Title\" checked>\n\t\t<input type=\"checkbox\" name=\"showCardSubtitle\" title=\"Subtitle\">\n\t\t<input type=\"checkbox\" name=\"showText\" title=\"Text\" checked>\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\" checked>\n\t\t<input type=\"color\" name=\"cardsBg\" title=\"BG\" value=\"#ffffff\">\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax required>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n\t\t</fieldset>\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#edefeb\" condition=\"overlay && bg.type == 'image'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type == 'image'\">\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n\t<div class=\"position-relative\">\n\t\t<div mbr-class=\"{'container': !fullWidth,\n                    'container-fluid': fullWidth}\">\n\t\t\t<div class=\"row justify-content-center\">\n\t\t\t\t<div class=\"col-12 content-head\">\n\t\t\t\t\t<div class=\"mbr-section-head mb-5\" mbr-if=\"showTitle || showSubtitle\">\n\t\t\t\t\t\t<h4 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><b>2024 Project</b></h4>\n\t\t\t\t\t\t<h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\"></h5>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n\t\t\t<div class=\"embla__viewport\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t\t\t<div class=\"embla__container\">\n\t\t\t\t\t<div class=\"embla__slide slider-image item active\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/1-961x961.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"0\" data-bs-slide-to=\"0\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Christmas</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Combining creativity with engineering, using logic gates and circuit design, we can create interactive Christmas lights.</p>\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?addedProject=0&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/3-600x600.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"1\" data-bs-slide-to=\"1\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Code table</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Pulse counter, through adders and flip-flops, learn the operation principles of digital calculation and digital circuits.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?exampleProject=0&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/5-600x600.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"2\" data-bs-slide-to=\"2\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Adding Circuit</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\t\t\tUse full adder to perform binary addition and convert the result into a seven-segment display to display the value.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?exampleProject=13&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/6-1200x1200.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"4\" data-bs-slide-to=\"4\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>Subtraction Circuit</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\t\t\tBinary subtraction is performed using a full adder to add 1's complement and the result is converted to a seven-segment display to display the value.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?exampleProject=15&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/7-1200x1200.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"5\" data-bs-slide-to=\"5\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\">\n\t\t\t\t\t\t\t\t\t<b>Marquee</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\t\t\tUse flip-flops to complete a shift counter and achieve a marquee effect.\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?exampleProject=7&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/9-600x600.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"5\" data-bs-slide-to=\"5\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>quiz Buzzer</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Use the concept of self-locking circuit to develop an answering machine circuit for fun.</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?addedProject=1&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/8-1200x1200.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"6\" data-bs-slide-to=\"6\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>calculator</b></h5>\n\t\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Combine the knowledge in class to integrate the addition circuit and the subtraction circuit to complete a computer circuit.</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?addedProject=2&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n\t\t\t\t\t<div class=\"slide-content\">\n\t\t\t\t\t\t<div class=\"item-img\">\n\t\t\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/10-600x600.png\" alt=\"Mobirise Website Builder\" title data-slide-to=\"8\" data-bs-slide-to=\"8\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"item-content\" mbr-if=\"showCardTitle || showCardSubtitle || showText || showButtons\">\n\t\t\t\t\t\t\t<h5 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".item-title\" mbr-if=\"showCardTitle\"><b>4-digit code table</b></h5>\n\t\t\t\t\t\t\t<h6 class=\"item-subtitle mbr-fonts-style mt-1\" mbr-theme-style=\"display-7\" data-app-selector=\".item-subtitle\" mbr-if=\"showCardSubtitle\">\n\t\t\t\t\t\t\t\tWebsite Design\n\t\t\t\t\t\t\t</h6>\n\t\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-3\" mbr-if=\"showText\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\t\tSuperpose the pulse counter to complete the 4-digit code table circuit.</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-2\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\"><a href=\"https://simul.wlinny.com/?addedProject=3&language=en\" class=\"btn item-btn btn-primary\" target=\"_blank\" data-app-placeholder=\"Type Text\">View</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<button class=\"embla__button embla__button--prev\">\n\t\t\t\t<span class=\"mobi-mbri mobi-mbri-arrow-prev mbr-iconfont\" aria-hidden=\"true\"></span>\n\t\t\t\t<span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Previous</span>\n\t\t\t</button>\n\t\t\t<button class=\"embla__button embla__button--next\">\n\t\t\t\t<span class=\"mobi-mbri mobi-mbri-arrow-next mbr-iconfont\" aria-hidden=\"true\"></span>\n\t\t\t\t<span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Next</span>\n\t\t\t</button>\n\t\t</div>\n\t</div>\n</section>",
+          "_anchor": "features017-7c",
+          "_isUserblock": true,
+          "_cid": "uG4YL3Vthk",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
